@@ -1,0 +1,175 @@
+\PassOptionsToPackage{svgnames}{xcolor}
+\input{Guyon_land.tex}
+\lhead{\footnotesize{\textsf{Lycée Bellevue}}} %gauche
+%\chead{\textsf{\textcolor{red}{\textbf{\textsc{Plan de travail Fonctions Affines }}}}} %centre
+\rhead{Seconde}%droit
+%pied de page                                              
+%\rfoot{\scriptsize{\textsf{Page~\thepage{}~sur~\pageref{LastPage}}}}
+\cfoot{Plan de travail : Rappels calcul numérique}
+\newcommand{\bulle}[3]{
+	\psframe[linewidth=1mm,framearc=0.1,linecolor=#1](-1,-3)(4,0)%rectangle orange
+	\psline[linecolor=#1](-1,-.8)(4,-.8)%Ligne sous question flash
+	\rput(1.5,-.5){#2}%texte question Flash
+	\rput(1.5,-1.9){\begin{minipage}{4cm}
+			{\darkgray #3}
+\end{minipage}}}
+
+\newcommand{\bullecours}[3]{
+	\psframe[linewidth=1mm,framearc=0.1,linecolor=#1](-3.5,-2.5)(13,3)%Le cadre bleu
+	\psline[linecolor=#1](-3.5,2.2)(13,2.2)%le souslignage du titre
+	\rput(4.5,2.6){#2}% le texte en chapeau
+	\rput(3.8,-0.1){\begin{minipage}{14cm}%début du texte compétences
+			{\small\darkgray #3}
+\end{minipage}}}
+
+\newcommand{\bulleQR}[3]{
+	\psframe[linewidth=1mm,framearc=0.1,linecolor=#1](0,3)(4,7.5)
+	\psline[linecolor=#1](0,6.7)(4,6.7)
+	\rput(2,7.1){#2}
+	\rput(2,5){\begin{minipage}{3.5cm}%Emplacement du QR code
+			\begin{center}
+				{\small\darkgray #3}
+			\end{center}
+\end{minipage}}}
+
+\definecolor{B1}{cmyk}{0.00, 1.00, 0.60, 0.40}
+\definecolor{A1}{cmyk}{1.00, 0.00, 0.00, 0.50}
+
+
+\begin{document}
+	
+	\begin{center}
+		\begin{pspicture}(0,0)(19,12) 
+			\psset{fillstyle=solid}
+				
+			\rput(9.5,12){\Huge \textbf{Les Fractions}} %bulle centrale
+			
+			\rput[l](2,8){%bulle NNO : connaissances et compétences
+				%\pspolygon[fillcolor=A1,linecolor=A1](5,-1.5)(8.5,-4)(5.5,-1.5) %flèche bleue
+				\bullecours
+				{A1}
+			{	\large{\textbf{Je connais mon cours}}}
+				{$\to$ Compétence 1 :  $\square$ Connaître la définition et propriétés élémentaires d'une fraction.\par
+				$\to$ Compétence 2 :  $\square$ Savoir ajouter deux fractions.\par
+				$\to$ Compétence 3 :  $\square$ Savoir multiplier deux fractions.\par
+				$\to$ Compétence 4 :  $\square$ Savoir diviser deux fractions. \par
+				$\to$ Compétence 5 :  $\square$ Savoir mener un calcul avec des fractions. \par
+				$\to$ Compétence 6 :  $\square$ Savoir calculer la fraction ou le pourcentage d'un nombre. \par
+				$\to$ Compétence 7 :  $\square$ Savoir résoudre un problème utilisant les fractions.\par	}}
+				
+			\rput[l](18,3.5){%bulle ENE : Aide vidéo
+				%\pspolygon[fillcolor=A1,linecolor=A1](1,3.3)(-6,0.5)(1.7,3.3)%flèche
+				\bulleQR
+				{A1}
+				{Corrections :}
+				{	\qrcode{https://www.dropbox.com/s/0tn144lep88bnf3/PDT_2022.pdf?dl=0}}
+			}
+			
+			\rput[l](-3,4){%bulle O : Questions diag
+				%\pspolygon[fillcolor=orange,linecolor=orange](4,-1)(9,-1.5)(4,-1.5)
+				\bulle
+				{orange}
+				{\Large {\textbf{Diagnostique :}}}
+				{\psline[linecolor=darkgray](2,-0.5)(2.5,0.5)%barre slash
+					\rput(3,0){{\darkgray\Huge 10}}
+				}
+				\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=1.8](3.5,0)(5,1.5)(6.5,0)
+				\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=.4](3.5,-3)(5,-4.5)(7,-4.5)
+				
+				\psframe[linewidth=1mm,framearc=0.1,linecolor=blue](7,-4)(22.5,-5)%Le cadre bleu
+				\rput[l](7.3,-4.5){\large{\textbf{Si 10/10, Passage direct au chapitre suivant sur les puissances.}}}
+		} 
+
+		\rput[l](-3,-1.5){%bulle O : Questions bilan
+		%\pspolygon[fillcolor=orange,linecolor=orange](0,-1)(-5,-1.5)(0,-1.5)
+			\bulle
+			{orange}
+			{\Large {\textbf{Bilan :}}}
+			{\psline[linecolor=darkgray](2,-0.5)(2.5,0.5)%barre slash
+				\rput(3,0){{\darkgray\Huge 10}}}
+		} 
+			
+			\rput[l](4,4){%bulle SO : Compétence 1
+				%\pspolygon[fillcolor=B1,linecolor=B1](4,-0.5)(9,2.5)(4,-1)
+				\bulle
+				{B1}
+				{Compétence 1}
+				{Exercice 1 \hfill $\star$ \hfill $\square$ \par
+					Exercice 2 \hfill $\star\star$ \hfill $\square$ \par
+					Exercice 3 \hfill $\star\star$ \hfill $\square$}
+					\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=1.8](3.5,0)(5,1.5)(6.5,0)
+			}
+			
+			\rput[l](11,4){%bulle S : compétence 2
+				%\pspolygon[fillcolor=B1,linecolor=B1](2.5,-0.5)(3,2.5)(3,-0.5)
+				\bulle
+				{B1}
+				{Compétence 2}
+				{Exercice 4 \hfill $\star$ \hfill $\square$ \par
+					Exercice 5 \hfill $\star\star$ \hfill $\square$}
+					\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=1.8](3.5,0)(5,1.5)(6.5,0)
+			}
+			
+			\rput[l](18,4){%bulle SE : compétence 3
+				%\pspolygon[fillcolor=B1,linecolor=B1](1.5,-0.5)(-2,2.5)(2,-0.5)
+				\bulle
+				{B1}
+				{Compétence 3}
+				{Exercice 6 \hfill $\star$ \hfill $\square$ \par
+					Exercice 7 \hfill $\star\star$ \hfill $\square$ \par
+					Exercice 8 \hfill $\star\star\star$ \hfill $\square$ \par
+				}
+					\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=1](4,-3)(4.5,-3.5)(4,-5.6)
+			}  
+			
+				\rput[l](19.5,-1.5){%bulle SE : compétence 4
+				%\pspolygon[fillcolor=B1,linecolor=B1](0,-1.5)(-6,1.6)(0,-1)
+				\bulle
+				{B1}
+				{Compétence 4}
+				{Exercice 9 \hfill $\star$ \hfill $\square$ \par
+					Exercice 10 \hfill $\star\star$ \hfill $\square$ \par
+					Exercice 11 \hfill $\star\star\star$ \hfill $\square$ \par
+				}
+					\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=1.8](.5,-3.3)(-0.5,-4.5)(-2.5,-3)
+			}  
+		
+				\rput[l](14,-1.5){%bulle SE : compétence 5
+				%\pspolygon[fillcolor=B1,linecolor=B1](1.5,0)(7,6)(2,0)
+				\bulle
+				{B1}
+				{Compétence 5}
+				{Exercice 12 \hfill $\star$ \hfill $\square$ \par
+					Exercice 13 \hfill $\star\star$ \hfill $\square$ \par
+					Exercice 14\hfill $\star\star\star$ \hfill $\square$ \par
+					Exercice 15 \hfill $\star\star\star$ \hfill $\square$}
+					\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=1.8](.5,-3.3)(-0.5,-4.5)(-2.5,-3)
+			}  
+			\rput[l](8.5,-1.5){%bulle SE : compétence 6
+			%\pspolygon[fillcolor=B1,linecolor=B1](1.5,0)(1,6.5)(2,0)
+			\bulle
+			{B1}
+			{Compétence 6}
+			{Exercice 16 \hfill $\star$ \hfill $\square$ \par
+				Exercice 17 \hfill $\star\star$ \hfill $\square$ \par
+				Exercice 18 \hfill $\star\star\star$ \hfill $\square$ \par
+			}
+				\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=1.8](.5,-3.3)(-0.5,-4.5)(-2.5,-3)
+		}  
+		\rput[l](3,-1.5){%bulle SE : compétence 7
+		%\pspolygon[fillcolor=B1,linecolor=B1](1.5,0)(-5,6)(2,0)
+		\bulle
+		{B1}
+		{Compétence 7}
+		{Exercice 19 \hfill $\star$ \hfill $\square$ \par
+			Exercice 20 \hfill $\star\star$ \hfill $\square$ \par
+			Exercice 21 \hfill $\star\star\star$ \hfill $\square$ \par
+			Exercice 22 \hfill $\star\star\star$ \hfill $\square$}
+			\psline[linewidth=.3cm, linecolor=darkgray,arrows=->, linearc=1.8](.5,-3.3)(-0.5,-4.5)(-2.5,-3)
+	}  
+		\end{pspicture}
+	\end{center}
+	
+	
+	
+\end{document}

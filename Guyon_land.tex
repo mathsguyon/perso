@@ -1,0 +1,272 @@
+\documentclass[a4paper,oneside, landscape,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+%\usepackage{ProfCollege}
+\usepackage{amsmath,amsfonts,amsthm,amssymb,amsbsy,amscd,mathrsfs}
+\usepackage{lmodern}
+\usepackage{fourier}
+\usepackage[scaled=0.875]{helvet} % ss
+\usepackage{textcomp}
+\usepackage{dsfont} % pour les symboles des ensembles
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{fancyhdr} 
+\fancyhf{}
+\setlength{\headheight}{26pt}
+\usepackage{tabularx}
+\usepackage{qrcode}
+\setlength{\footskip}{18pt}
+\renewcommand {\headrulewidth}{0pt}
+\renewcommand {\footrulewidth}{0pt}
+%\usepackage{lastpage}
+%\usepackage{makeidx}
+%\usepackage{graphicx} % inclure le fichier graphique de pondichery 2010
+\usepackage{hyperxmp}
+\usepackage[colorlinks=true,pdfstartview=FitV,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\pagestyle{fancy}
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{mathtools} %pour l'alignement des termes d'une matrice
+\usepackage{fltpoint}
+\usepackage{xcolor,colortbl}
+\usepackage{pstricks,pst-all,pst-plot,pstricks-add,pst-tree,pst-3dplot,pst-func}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{esvect}
+\usepackage{pifont}
+\setlength{\parindent}{0mm}
+\usepackage [alwaysadjust]{paralist}
+\usepackage{pgf,tikz}
+\usepackage{tkz-tab}
+\usepackage{tkz-fct}
+\usepackage{tkz-euclide}
+\usepackage{xkeyval}
+%\usepackage{sesamanuel}
+
+%\usepackage{bclogo}
+\usepackage[tikz]{bclogo}
+%\setdefaultenum {1.}{a)}{}{}
+\hyphenpenalty=10000 
+\tolerance=2000
+\emergencystretch=1em
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\renewcommand*{\tabularxcolumn}[1]{m{#1}} %centrage vertical des cellules d'un tableau tabularx
+\newcommand{\Oij}{$\left( {{\mathrm{O}};\vec i,\vec j} \right)$}
+\newcommand{\Oijk}{$\left( {{\mathrm{O}};\vec i,\vec j ,\vec k} \right)$}
+\newcommand{\euro}{\texteuro{}}
+\newcommand{\R}{\mathds {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathds {N}}
+\newcommand{\Z}{\mathds {Z}}
+\newcommand{\Q}{\mathds {Q}}
+\newcommand{\e}{\mathrm {e}}
+\newcommand{\dd}{\,\mathrm{d}}
+\DecimalMathComma
+% Mise en forme des algorithmes
+\usepackage[french,boxed,titlenumbered,lined,longend]{algorithm2e}
+\SetKwIF {Si}{SinonSi}{Sinon}{si}{alors}{sinon\_si}{alors}{fin~si}
+\SetKwFor{Tq}{tant\_que~}{~faire~}{fin~tant\_que}
+\SetKwFor{PourCh}{pour\_chaque }{ faire }{fin pour\_chaque}
+\SetKwInput{Sortie}{Sortie}
+\newcommand{\Algocmd}[1]{\textsf{\textsc{\textbf{#1}}}}\SetKwSty{Algocmd}
+\newcommand{\AlgCommentaire}[1]{\textsl{\small  #1}}  
+%
+
+\newcommand{\fvalid}{\raisebox{1ex}{\rotatebox{180}{$\Rsh$}}} % flèche entrée pour prg casio
+
+
+%\newcommand{\QCM}[3]{ $\bullet$ \quad #1 \hfill 
+%	$\bullet$ \quad #2 \hfill 
+%	$\bullet$ \quad #3 }
+
+\newcommand{\QCMc}[4]{   #1 \\ 
+	\makebox[2cm][l]{\psframe(.25,.25) \qquad #2 }\hfill 
+	\makebox[2cm][l]{\psframe(.25,.25) \qquad #3 }\hfill 
+	\makebox[2cm][l]{\psframe(.25,.25) \qquad #4 }} % QCM avec cases à cocher%
+
+\setcounter{secnumdepth}{3}
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\reset@font\bfseries\red\sffamily\scshape}} 
+
+\renewcommand\subsection{\@startsection {subsection}{2}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\reset@font\bfseries\sffamily\scshape\blue}}                                   
+\renewcommand\subsubsection{\@startsection {subsubsection}{3}{\z@}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus .2ex}%
+	{\reset@font\bfseries\sffamily\scshape\small}}
+\makeatother
+\setcounter{secnumdepth}{2}
+
+\renewcommand\thesection{\Roman {section}}
+\renewcommand\thesubsection{\arabic {subsection}}
+%%%% debut macro %%%%
+\makeatletter
+\renewcommand\theequation{\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+%%%% fin macro %%%%
+
+\newcounter{nexo}           % déclaration du numéro d'exo
+\setcounter{nexo}{0}        % initialisation du numero
+
+\newcommand{\exo}{
+	\refstepcounter{nexo} 
+	\par{\textsf{\textbf{\textcolor{blue}{{\small{Exercice \; \arabic{nexo}}}}}}}}
+\newcounter{nquestion}           % déclaration du numéro d'exo
+\setcounter{nquestion}{0} 
+\newcommand{\question}{
+	\refstepcounter{nquestion} 
+	\par{\textsf{\textbf{Question \; \arabic{nquestion}}}}}
+
+\newcounter{nactivite}           % déclaration du numéro d'exo
+\setcounter{nactivite}{0}        % initialisation du numero
+
+\newcommand{\act}{
+	\stepcounter{nactivite} 
+	\par{\textsf{\textbf{\textcolor{blue}{{\small{\textsc{activité} \; \arabic{nactivite}}}}}}}}
+
+%%%% debut macro %%%%
+\makeatletter
+\@addtoreset{nactivite}{section}
+\makeatother
+%%%% fin macro %%%%
+
+\newrgbcolor{Rfond}{.995 0.945 .985}  
+\newrgbcolor{Rougef}{.8 0.1 .2}
+\newrgbcolor{Rbord}{.6 0.1 .4}
+
+\newcommand{\ds}{\displaystyle}	%displaystyle
+\newcommand{\cg}{\texttt{]}}	%crochet gauche
+\newcommand{\cd}{\texttt{[}}	%crochet droit
+\newcommand{\pg}{\geqslant}		%plus grand ou égal
+\newcommand{\pp}{\leqslant}		%plus petit ou égal
+
+\newcommand{\cadreR}[1]{%
+	\psframebox[framesep=.8em,linecolor=black,linewidth=0.25pt,framearc=0.2,fillstyle=solid,fillcolor=Rfond]{\begin{minipage}{\linewidth-1.6em}%
+			#1\end{minipage}}}
+\newcommand{\cadreB}[1]{%
+	\psframebox[framesep=.8em,linecolor=black,linewidth=0.25pt,framearc=0.2]{\begin{minipage}{\linewidth-1.6em}%
+			#1\end{minipage}}}
+
+\newcommand{\dem}{
+	\medskip
+	\par{\textsf{\textsc{{\small{\ding{106}\: démonstration}}}}}%
+	\medskip}
+
+
+\newcommand{\preuve}{
+	\medskip
+	\par{\textsf{\textsc{{\small{\ding{106}\: preuve}}}}}%
+	\medskip} 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{tabto}
+\newcommand{\encadrer}[1]{
+	{\setlength{\fboxsep}{2mm}
+		\fbox{#1}}}
+\usepackage{multicol}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\trou}[1]{%
+	\iftrou%
+	\settowidth{\trouwidth}{#1}%
+	\hbox to \trouwidth{\dotfill}%
+	\else%
+	#1%
+	\fi
+}
+\newcommand{\image}[2]{\includegraphics[width=#1]{#2}}
+
+\tikzstyle{general}         =[line width=0.3mm, >=stealth, x=1cm, y=1cm,line cap=round, line join=round]
+\tikzstyle{quadrillage}     =[line width=0.3mm, color=CyanTikz40]
+\tikzstyle{quadrillageNIV2} =[line width=0.3mm, color=CyanTikz20]
+\tikzstyle{quadrillage55}   =[line width=0.3mm, color=CyanTikz40, xstep=0.5, ystep=0.5]
+\tikzstyle{quadrillage33}   =[line width=0.3mm, color=CyanTikz40, xstep=0.33, ystep=0.33]
+\tikzstyle{cote}            =[line width=0.3mm, <->]
+\tikzstyle{epais}           =[line width=0.5mm, line cap=butt]
+\tikzstyle{tres epais}      =[line width=0.8mm, line cap=butt]
+\tikzstyle{axe}             =[line width=0.3mm, ->, color=Noir, line cap=rect]
+
+\definecolor{fond1}{rgb}{1,1,.8}%jaune clair
+\definecolor{fond2}{rgb}{.8,.9,1}%bleu clair
+\definecolor{fond6}{rgb}{1,0.8,0}%orange
+\definecolor{LightGray}{gray}{0.9}
+\definecolor{LightGreen}{rgb}{0.5,1,0.5}
+\definecolor{LightRed}{rgb}{1,0.5,0.5}
+\definecolor{A1}                {cmyk}{1.00, 0.00, 0.00, 0.50}%bleu marine
+\definecolor{A2}                {cmyk}{0.60, 0.00, 0.00, 0.10}%bleu ciel
+\definecolor{A3}                {cmyk}{0.30, 0.00, 0.00, 0.05}
+\definecolor{A4}                {cmyk}{0.10, 0.00, 0.00, 0.00}
+\definecolor{B1}                {cmyk}{0.00, 1.00, 0.60, 0.40}
+\definecolor{B2}                {cmyk}{0.00, 0.85, 0.60, 0.15}
+\definecolor{B3}                {cmyk}{0.00, 0.20, 0.15, 0.05}
+\definecolor{B4}                {cmyk}{0.00, 0.05, 0.05, 0.00}
+\definecolor{C1}                {cmyk}{0.00, 1.00, 0.00, 0.50}
+\definecolor{C2}                {cmyk}{0.00, 0.60, 0.00, 0.20}
+\definecolor{C3}                {cmyk}{0.00, 0.30, 0.00, 0.05}
+\definecolor{C4}                {cmyk}{0.00, 0.10, 0.00, 0.05}
+\definecolor{D1}                {cmyk}{0.00, 0.00, 1.00, 0.50}
+\definecolor{D2}                {cmyk}{0.20, 0.20, 0.80, 0.00}
+\definecolor{D3}                {cmyk}{0.00, 0.00, 0.20, 0.10}
+\definecolor{D4}                {cmyk}{0.00, 0.00, 0.20, 0.05}
+\definecolor{F1}                {cmyk}{0.00, 0.80, 0.50, 0.00}
+\definecolor{F2}                {cmyk}{0.00, 0.40, 0.30, 0.00}
+\definecolor{F3}                {cmyk}{0.00, 0.15, 0.10, 0.00}
+\definecolor{F4}                {cmyk}{0.00, 0.07, 0.05, 0.00}
+\definecolor{G1}                {cmyk}{1.00, 0.00, 0.50, 0.00}
+\definecolor{G2}                {cmyk}{0.50, 0.00, 0.20, 0.00}
+\definecolor{G3}                {cmyk}{0.20, 0.00, 0.10, 0.00}
+\definecolor{G4}                {cmyk}{0.10, 0.00, 0.05, 0.00}
+\definecolor{H1}                {cmyk}{0.40, 0.00, 1.00, 0.10}
+\definecolor{H2}                {cmyk}{0.20, 0.00, 0.50, 0.05}
+\definecolor{H3}                {cmyk}{0.10, 0.00, 0.20, 0.00}
+\definecolor{H4}                {cmyk}{0.07, 0.00, 0.15, 0.00}
+\definecolor{J1}                {cmyk}{0.00, 0.50, 1.00, 0.00}
+\definecolor{J2}                {cmyk}{0.00, 0.20, 0.50, 0.00}
+\definecolor{J3}                {cmyk}{0.00, 0.10, 0.20, 0.00}
+\definecolor{J4}                {cmyk}{0.00, 0.07, 0.15, 0.00}
+\definecolor{FondOuv}           {cmyk}{0.00, 0.05, 0.10, 0.00}
+\definecolor{FondAutoEvaluation}{cmyk}{0.00, 0.03, 0.15, 0.00}
+\definecolor{FondTableaux}      {cmyk}{0.00, 0.00, 0.20, 0.00}
+%\definecolor{FondAlgo}          {cmyk}{0.07, 0.00, 0}
+\tikzstyle{mybox} = [draw=black, fill=A4, very thick,
+rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=red, text=white,rounded corners]
+\newcommand{\postit}[2]{%
+	\begin{tikzpicture}
+		\node [mybox] (box){%
+			\begin{minipage}{\linewidth}
+				%\centering{#1}
+				{#2}
+			\end{minipage}
+		};
+		\node[fancytitle, right=10pt] at (box.north west) {{\bf #1}};
+		%\node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};
+	\end{tikzpicture}%
+	%
+}
+
+\newcommand{\postitpp}[3]{%
+	\begin{tikzpicture}
+		\node [mybox] (box){%
+			\begin{minipage}{#1}
+				%\centering{#1}
+				{#3}
+			\end{minipage}
+		};
+		\node[fancytitle] at (box.north) {{\bf #2}};
+		%\node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};
+	\end{tikzpicture}%
+	%
+}

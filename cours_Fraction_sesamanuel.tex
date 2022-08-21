@@ -1,0 +1,234 @@
+%\listfiles
+\PassOptionsToPackage{table}{xcolor}
+\PassOptionsToPackage{svgnames}{xcolor}
+\documentclass[nocrop]{sesamanuel_guyon}
+\renewcommand\PrefixeCorrection{Corrections/}
+\usepackage{etex}
+\usepackage{ProfCollege}
+%\usepackage{pstcol,pst-grad}%
+
+\NewThema{N}{n}{nombres\\\& calculs}{Nombres\\\& calculs}{LES BASES}{red}{red!50}
+
+%\NewThema{E}{e}{espace \&\\géométrie}{Espace \&\\géométrie}{ESPACE \&\\ GEOMETRIE}{DodgerBlue}{DodgerBlue!50}
+%
+%\NewThema{D}{d}{organisation et \\et gestion de données}{Organisation et \\et gestion de données}{ORGANISATION ET\\GESTION DE DONNÉES}{violet}{violet!50}
+%
+%\NewThema{M}{m}{grandeurs\\et mesures}{Grandeurs\\et mesures}{GRANDEURS\\ET MESURES}{Green}{Green!50}
+%
+%\NewThema{A}{a}{algorithmique \&\\programmation}{Algorithmique \&\\ programmation}{ALGORITHMIQUE \&\\PROGRAMMATION}{orange}{orange!50}
+
+\renewcommand\ListeMethodesThemes{{n}{N},{d}{D},{g}{G},{m}{M},{a}{A}}
+
+
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\e}{\mathrm {e}}
+\newcommand{\D}{\mathbb {D}}
+\begin{document}
+	
+	\frontmatter
+	\pagenumbering{gobble}
+	%\include{1ere_de_couverture_5e_22-23}
+	
+	\mainmatter
+	
+	\themaN
+	
+	\chapter{Calculer\\ avec les fractions}
+	\label{S01}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{autoeval}
+	\begin{itemize}
+		\begin{multicols}{2}
+		\item Simplifier $\dfrac{-18}{-64}=$ \BoiteRapido{}
+		\item	$2-\dfrac{5}{12}=$	\BoiteRapido{}
+		\item	$\dfrac{3}{4}+\dfrac{7}{10}=$ \BoiteRapido{}
+		\item	$\dfrac{3}{4}\times \dfrac{7}{10}=$ \BoiteRapido{}
+		\item	$\dfrac{12}{-25}\times \dfrac{-45}{18}=$ \BoiteRapido{}
+		\item	$\dfrac{3}{4}\div \dfrac{7}{10}=$ \BoiteRapido{}
+		\item	$\dfrac{2}{3}\div 3=$ \BoiteRapido{}
+		\item	$\dfrac{3-\dfrac{2}{3}}{3+\dfrac{2}{3}}=$ \BoiteRapido{}
+		\item	$\dfrac{3}{4}-\dfrac{1}{4}\times \dfrac{2}{3}=$ \BoiteRapido{}
+		\item	Raoul mange les $\dfrac{3}{7}$ d'une pizza.\\
+		Simone dévore le tiers du reste.\\
+		Quelle part reste-t-il à Hector ?\BoiteRapido{}
+		\end{multicols}
+	\end{itemize}
+	\end{autoeval}
+	
+	
+	\begin{prerequis}
+		\small
+			\begin{itemize}
+		\item	Connaître la définition et propriétés élémentaires d'une fraction.\par
+\item	Savoir ajouter deux fractions.\par
+	\item Savoir multiplier deux fractions.\par
+	\item Savoir diviser deux fractions. \par
+	\item Savoir mener un calcul avec des fractions. \par
+	\item  Savoir calculer la fraction ou le pourcentage d'un nombre. \par
+	 \item Savoir résoudre un problème utilisant les fractions.\par	
+		\end{itemize}
+	\end{prerequis}
+	
+\bigskip
+
+
+	\begin{debat}[Débat : Pourquoi étudier les opérations avec les fractions ?]
+\subsection*{Les entiers naturels :}		En primaire, vous avez travaillé avec des nombres entiers. Les premières opérations étudiées (addition et multiplication) sont dîtes "stables" avec les entiers.
+		Si on ajoute ou si on multiplie deux entiers naturels, on obtient un entier naturel.\\
+		Cet ensemble des entiers naturels, on peut l'écrire : $\big\{0;1;2;3;\ldots \big\}$ comme au collège, mais à partir du lycée, on lui donnera un nom : $\mathbb {N}$. Le chapitre 3 est consacré à ces nouvelles définitions.\\
+\subsection*{Les entiers relatifs :}	
+Avec la soustraction, 	on se rend compte que les entiers naturels ne suffisent plus pour toutes les opérations.\\
+Avec $3-2=1$ , la différence de deux entiers naturels reste un entier naturel
+mais la soustraction $2-3$ ne donne pas un entier naturel.
+La soustraction n'est donc pas stable avec $\mathbb {N}$.\\
+Pour s'en sortir, il faut définir un nouvel ensemble, les entiers relatifs, qu'on va appeler : $\mathbb {Z}$.\\
+Il contient tous les entiers naturels, et on rajoute tous leurs opposés : $\mathbb {Z}=\{\ldots ; -3;-2;-1;0;1;2;3; \ldots\}$.\\
+Vous avez appris à ajouter, soustraire et multiplier les entiers relatifs au collège.\\
+\subsection*{Les décimaux :}		
+La difficulté suivante vient avec la division. Avec $2 \div 1=2$ , le quotient de deux entiers donne un entier.\\
+Mais $1 \div 2$ ne donne pas un nombre entier.\\
+Il a donc fallu créer une nouvelle famille de nombre, avec la numération décimale. On écrit : $1 \div 2 = 0,5$.\\
+Ce nouvel ensemble des décimaux  s'appelle $\mathbb{D}$.\\
+Vous avez appris en primaire à gérer les quatre opérations avec les décimaux.\\
+\subsection*{Les rationnels :}		
+Mais les problèmes ne s'arrêtent pas là avec la division.\\
+Car le quotient $1 \div 3$ ne donne pas un nombre décimal. La démonstration sera faîte dans le chapitre 3.\\
+$1 \div3\approx 0,3333\ldots$ mais il est impossible de trouver un décimal exactement égal à $1\div 3$.\\
+Ce nombre existe mais n'a pas d'écriture décimale. Comment s'en sortir ?\\
+Inventer une nouvelle notation : $\dfrac{1}{3}$ et un nouvel ensemble qui contienne ces nombres. On appelle cet ensemble celui des rationnels, on le nomme : $\mathbb{Q}$.\\
+L'objectif de ce chapitre est donc de vérifier que vous savez opérer avec des éléments de cet ensemble, c'est à dire vérifier que vous savez manipuler les fractions dans des calculs.\\
+\subsection*{Illustration}
+\begin{center}
+	
+	\begin{pspicture}(0,-.5)(7,6.5)
+	\newrgbcolor{bleu}{0.1 0.05 .5}
+	\newrgbcolor{prune}{.6 0 .48}
+	\psset{linewidth=1pt,framearc=0.3, linecolor=prune}
+	\psframe(1.2,1.2)(4,2.5)
+	\uput*[r](2,2.5){\LARGE\prune {$\N$}}
+	\uput[u](2,1.5){\bleu {$0$}}
+	\uput[d](2.9,1.9){\bleu {$2^3$}}
+	\uput[l](3.8,2){\bleu {$15$}}
+	\psframe(.9,.9)(5.5,3.5)
+	\uput*[r](2,3.5){\LARGE\prune {$\Z$}}
+	\uput[r](2.3,2.9){\bleu {$-1$}}
+	\uput[d](4.5,3.2){\bleu {$-12$}}
+	\uput[d](4.6,2){\bleu {$-3^4$}}
+	\uput[r](2,4){\bleu {$-0,475$}}
+	\uput[d](3.4,5.5){\bleu {$-\dfrac{4}{3}$}}
+	\psframe[linewidth=1.25pt,framearc=0.3, linecolor=bleu](0,0)(8,6.5)
+	\psframe(.6,.6)(6,4.5)
+	\uput*[r](2,4.5){\LARGE\prune {$\D$}}
+	\psframe(.4,.4)(6.8,5.5)
+	\uput*[r](2,5.5){\LARGE\prune {$\Q$}}
+	\end{pspicture}
+\end{center}	
+
+Le chapitre 3 est entièrement consacré à ces ensembles. Il poursuit même cette histoire avec les nombres qui ne s'écrivent pas sous forme de fraction.\\
+mais pas question de spolier ici ce chapitre.\\
+On reste focalisé dans ce chapitre sur les fractions.\end{debat}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\cours 
+	
+	
+	%%%%%%%%%%%%%%%%%
+	\section{Généralités avec les fractions :}
+	\subsection{Fractions égales}
+	
+	
+	\begin{propriete}
+			On ne change pas la valeur d'une fraction en multipliant son numérateur et son dénominateur par même nombre non-nul.
+	\end{propriete}
+	
+	\begin{exemple*1}
+		\begin{align*}
+				A&=\dfrac{2}{7}&B&=\dfrac{25}{40}\\
+				&=\dfrac{2\times 3}{7\times 3}&&=\dfrac{5\times5}{5\times 8}\\
+				&=-\dfrac{6}{21}&&=\dfrac{5}{8}\\
+		\end{align*}
+	\end{exemple*1}
+	
+\subsection{Fractions irréductibles :}	
+	\begin{definition}
+		On appelle fraction irréductible, une fraction dont le dénominateur et le numérateur n'ont pas d'autres diviseurs communs que 1.
+	\end{definition}	
+\begin{exemple*1}	
+		\begin{align*}
+				&\dfrac{2}{7}  \text{est irréductible}&\dfrac{21}{14} \text{ n'est pas irréductible}\\
+		\end{align*}
+		\end{exemple*1}
+	
+	\begin{remarque}
+		Quand deux entiers n'admettent que $1$ comme diviseur commun, on dit qu'ils sont alors \textbf{premiers entre-eux}.\\
+	\end{remarque}
+\begin{approfondissement}
+	
+On dira que deux entiers sont premiers entre eux, si leur Plus Grand Diviseur Commun (PGCD) est égal à 1.\\
+On écrira par exemple : $PGCD(5;8)=1$ donc $5$ et $8$ sont premiers entre-eux, donc $\dfrac{5}{8}$ est irréductible.\\
+Mais $PGCD(4;8)=4$ donc $4$ et $8$ ne sont pas premiers entre-eux, donc $\dfrac{4}{8}$ n'est pas irréductible.
+	\end{approfondissement}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\exercicesbase
+	
+	\begin{colonne*exercice}
+		
+		\begin{exercice} %1
+			Exercice 1
+		\end{exercice}
+		
+	%	\begin{corrige}
+	%		Corrigé de l'exo 1
+	%	\end{corrige}
+		
+		\bigskip
+		
+		
+		\begin{exercice}[éventuel nom] %2
+			Exercice 2
+		\end{exercice}
+		
+	%	\begin{corrige}
+	%		Corrigé de l'exo 2
+		%\end{corrige}
+		
+		
+	\end{colonne*exercice}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\Recreation
+	
+	\begin{enigme}[Nom de l'énigme]
+		
+		\partie[nom de la partie]
+		
+	\end{enigme}
+	
+	
+%	\begin{corrige}
+%		Corrigé de l'énigme
+%	\end{corrige}  
+	
+	
+	%\include{Plans_de_travail_22-23}
+	
+	\AfficheCorriges[2]
+	
+	\backmatter
+	%\fancyfoot[R]{}
+	%\include{4e_de_couverture_22-23}
+	
+\end{document}
